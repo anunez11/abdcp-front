@@ -1,5 +1,5 @@
 import React from "react";
-import {Router,Switch } from "react-router-dom";
+import {Route,Switch } from "react-router-dom";
 
 
 import App from "./components/App";
@@ -12,13 +12,13 @@ import Page404 from  "./components/Page404";
 
 const AppRoutes= () => 
                      <App> 
-                         <Switch>
-                             <Router path="/consulta" component={Consulta} />
-                             <Router path="/programacion" component={Programacion} />
-                             <Router path="/retorno" component={Retorno} />
-                             <Router path="/solicitud" component={Solicitud} />
-                             <Router path="/" component={Consulta} />
-                             <Router component={Page404} />
+                        <Switch>
+                             <Route exact path="/consulta" component={Consulta} />
+                             <Route exact path="/programacion" component={Programacion} />
+                             <Route exact path="/retorno" component={Retorno} />
+                             <Route exact path="/solicitud" component={Solicitud} />
+                             <Route exact path="/" component={Consulta} />
+                             <Route component={Page404} />
                          </Switch>
                      </App>;
 export default AppRoutes;                     
