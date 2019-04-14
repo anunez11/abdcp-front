@@ -8,7 +8,7 @@ class  Conten extends Component{
     render(){
 
         const {body}=this.props;
-        return (<div>
+        return (<div className="container">
               {body} 
         </div>);
     }
