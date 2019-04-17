@@ -14,44 +14,70 @@ const getListaDepartamento = () => {
 
 
 const getListaModalidad= () => {
-
-    return {
-        type:"GET_MODALIDAD",
-        data:[]
-    };
     
+    return dispactch=>{
+        axios.get(variables.apiBase+"lista/listaModalidad").then(response=>{
+                 dispactch( {
+                     type:"GET_MODALIDAD",
+                     data:response.data
+                 })
+        } );
+ };
+
 };
 
 const getListaServicio = () => {
-
-    return {
-        type:"GET_SERVICIO",
-        data:[]
+    return dispactch=>{
+        axios.get(variables.apiBase+"lista/listaTipoServicio").then(response=>{
+                 dispactch( {
+                     type:"GET_SERVICIO",
+                     data:response.data
+                 })
+        } );
     };
+
 };
 
 const getListaCedente = () => {
 
-    return {
-        type:"GET_CEDENTE",
-        data:[]
+
+    return dispactch=>{
+        axios.get(variables.apiBase+"lista/listaParticipante").then(response=>{
+                 dispactch( {
+                     type:"GET_CEDENTE",
+                     data:response.data
+                 })
+        } );
     };
+
     
 };
 const getListaTipoDocumento = () => {
 
-    return {
-        type:"GET_TIPO_DOCUMENTO",
-        data:[]
+
+    return dispactch=>{
+        axios.get(variables.apiBase+"lista/listaTipoDocumento").then(response=>{
+                 dispactch( {
+                     type:"GET_TIPO_DOCUMENTO",
+                     data:response.data
+                 })
+        } );
     };
+
+
 };
 const getListaTipoCliente = () => {
 
-    return {
-        type:"GET_TIPO_CLIENTE",
-        data:[]
+
+    return dispactch=>{
+        axios.get(variables.apiBase+"lista/listaTipoCliente").then(response=>{
+                 dispactch( {
+                     type:"GET_TIPO_CLIENTE",
+                     data:response.data
+                 })
+        } );
     };
-    
+
 };
 
 export {getListaDepartamento,getListaModalidad,getListaServicio,getListaCedente,getListaTipoDocumento,getListaTipoCliente} ;
